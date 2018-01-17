@@ -1,0 +1,509 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a{
+	text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+Pseudo ::scrollbar-thumb element
+::-webkit-scrollbar-thumb:hover {
+    background-color: #6b6b6b;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 9px;
+    background-color: #6b6b6b;
+}
+Pseudo ::scrollbar-track-piece element
+::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+}
+
+
+//main css
+
+@mixin box-sizing-border{
+	box-sizing: border-box;
+	position: relative;
+}
+
+@mixin screw-normal-font{
+	font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+}
+
+
+.dropdown-menu-icon{
+	font-size: 18px;
+    margin: 0px 5px 0px 0px;
+}
+
+html,body{
+	height: 100%;
+}
+
+.noscroll{
+	overflow:hidden;
+}
+
+.main-inner{
+	@include box-sizing-border;
+	height: 100%;
+}
+
+.no-notes{
+	/*margin-top: -20px;*/
+    background: #f1f1f1;
+    text-align: center;
+	height:100%;
+
+	.iconfont{
+		display: inline-block;
+		vertical-align: middle;
+		color: #e4e4e4;
+		font-size: 120px;
+		text-shadow: 0 1px 0 white;
+		padding-top: 40%;
+    	@include box-sizing-border;
+	}
+}
+
+.screw-layout{
+	@include box-sizing-border;
+	display:flex;
+	height: 100%;
+}
+.screw-layout-item{
+	@include box-sizing-border;
+	&.vertical-layout{
+		height: 100%;
+
+		&.leftBoder{
+			border-left: 1px solid #ccc;
+		}
+	}
+}
+
+.notebooks-list{
+	height: calc(100% - 76px);
+    overflow: auto;
+}
+.notebooks{
+	background-color: #3f3f3f;
+	color: #fff;
+	width: 220px;
+	@include box-sizing-border;
+	&__itembox{
+		padding: 8px 10px 8px 10px;
+		@include box-sizing-border;
+		&.nopadding{
+			padding: 0px;
+		}
+	}
+}
+
+.recycle-list{
+	background-color: #fff;
+	color: #000;
+	width: 220px;
+	border-right: 1px solid #ccc;
+	@include box-sizing-border;
+	&__itembox{
+		padding: 8px 10px 8px 10px;
+		@include box-sizing-border;
+		border-bottom: 1px solid #ccc;
+		&.nopadding{
+			padding: 0px;
+			border: none;
+		}
+	}
+	&__title{
+		padding: 5px 0px;
+		margin: 0;
+		font-size: 20px;
+		font-weight: normal;
+	}
+}
+
+.link-icon-btn{
+	display: block;
+	text-decoration: none;
+	outline: none;
+	color: #ccc;
+
+	i.iconfont{
+		font-size: 30px;
+	}
+	&.abs{
+		position: absolute;
+	}
+}
+.recycle-view-wrap{
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+	.recycle-view{
+		padding:40px 40px 0px 40px;
+	}
+}
+.recycle-toolbar{
+	width: 800px;
+    margin: auto;
+	.recycle-footer{
+		position: fixed;
+		width: 800px;
+		padding: 8px 0;
+		bottom: 0;
+		border-top: 1px solid #d9d9d9;
+		background-color: white;
+		text-align: center;
+	}
+}
+.recyle-ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+
+	&__item{
+		border-bottom: 1px solid #ccc;
+		cursor: pointer;
+		position: relative;
+		padding: 12px 10px;
+		font-size: 12px;
+		line-height: 20px;
+		&:last-child{
+			border-bottom: none;
+		}
+		&.actived{
+			background-color: whitesmoke;
+    		border-right: 3px solid #ea6f5a;
+		}
+	}
+}
+
+.notes{
+	background-color: #f5f5f5;
+	@include box-sizing-border;
+	width: 390px;
+	&__itembox{
+		padding: 8px 15px 8px 15px;
+		@include box-sizing-border;
+		&.nopadding{
+			padding: 0px;
+		}
+	}
+}
+
+.listwrap{
+	padding: 8px 10px 8px 10px;
+	&.nopadding{
+		padding: 0px;
+	}
+	@include box-sizing-border;
+	list-style: none;
+
+	&__titleItem{
+		list-style: none;
+		padding: 0px;
+		height: 90px;
+		position: relative;
+		cursor: pointer;
+		border-top: 1px solid #ccc;
+		&.actived{
+			background-color: #ececec;
+			a.notetitle{
+				background-color: transparent;
+				text-shadow: none;
+				border-left: 3px solid #ec7259;
+			}
+		}
+		&:hover{
+			background-color: #ececec;
+		}
+		.noteConfig{
+			position: absolute;
+			right: 15px;
+			top: 38px;
+			padding: 0;
+			a.el-dropdown-link{
+				color: #000 !important;
+			}
+		}
+		p.abbreviate{
+			position: absolute;
+			top: 46px;
+			left: 18px;
+			right: 36px;
+			max-height: 30px;
+			height: 30px;
+			line-height: 30px;
+			margin: 0;
+			color: #555555;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			font-size: 11px;
+			font-weight: normal;
+		}
+		a.notetitle{
+			&:hover{
+				background-color: transparent;
+    			text-shadow: none;
+				border-left: 3px solid #ec7259;
+			}
+			margin-left: 0px;
+    		margin-right: 0px;
+			display: block;
+			text-decoration: none;
+			position: relative;
+			height: 90px;
+			line-height: 34px;
+			text-shadow: none;
+			color: #444;
+			border-left: 3px solid transparent;
+			@include screw-normal-font;
+			font-size: 18px;
+		}
+		.itemlabel{
+			position: absolute;
+			left: 15px;
+			top: 10px;
+			right: 40px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+
+	&__item{
+		list-style: none;
+		padding: 0px;
+		height: 34px;
+		position: relative;
+		cursor: pointer;
+		margin-top: 5px;
+		margin-bottom: 5px;
+
+		.notebookedit{
+			position: absolute;
+			right: 10px;
+			top: 8px;
+			padding: 0;
+			a.el-dropdown-link{
+				color: #a0a0a0 !important;
+			}
+		}
+		&.actived{
+			a.notebookname{
+				background-color: #646464;
+				border-left: 3px solid #ec7259;
+			}
+		}
+
+		a.notebookname{
+			&:hover{
+				background-color: #646464;
+			}
+			margin-left: -10px;
+    		margin-right: -10px;
+			display: block;
+			text-decoration: none;
+			position: relative;
+			height: 34px;
+			line-height: 34px;
+			text-shadow: none;
+			color: #fff;
+			border-left: 3px solid transparent;
+			@include screw-normal-font;
+			font-size: 14px;
+		}
+		.itemlabel{
+			position: absolute;
+			left: 15px;
+			right: 40px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+}
+
+.note-title{
+	border: none;
+    outline: none;
+	width: 100%;
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 0;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 0;
+    box-shadow: none;
+	@include box-sizing-border;
+}
+
+.screw-abs-btn{
+	display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+	@include screw-normal-font;
+	font-size: 16px;
+	color:#000;
+	position: absolute;
+	&.font-white{
+		color: #fff;
+	}
+}
+.screw-btn{
+	display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+	@include screw-normal-font;
+	font-size: 16px;
+	color:#000;
+	&.font-white{
+		color: #fff;
+	}
+}
+
+.screw-editor{
+	height: calc(100% - 54px);
+}
+
+.screw-input{
+	width: 100%;
+    height: 35px;
+    box-sizing: border-box;
+	&.dark{
+		background-color: rgba(180,180,180,0.2);
+    	border-color: #2f2f2f;
+		color: #c8c8c8;
+		&::-webkit-input-placeholder{
+			color:#9a9a9a;  
+		}
+	}
+	outline: 0px;
+    display: inline-block;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555555;
+    border-radius: 4px;
+    vertical-align: middle;
+	border: 1px solid #cccccc;
+	
+}
+
+.link-btn{
+	border-radius: 4px;
+    box-shadow: none;
+    color: #555555;
+    border-color: whitesmoke;
+    background: whitesmoke;
+    border-color: #d5d5d5;
+	border-style: solid;
+    border-width: 1px;
+
+    text-shadow: none;
+	display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+	text-decoration: none;
+	outline: none;
+
+	&.dark{
+		background: none;
+		border-color: #34ab20;
+		color: #34ab20;
+		&:hover{
+			background-color: rgba(52,171,32,0.1);
+		}
+	}
+	&.cancel{
+		background: none;
+    	border: none;
+		color:#969696;
+		&:hover{
+			color:#eee;
+		}
+	}
+}
+.screw-empty-label{
+	padding: 10px;
+    text-align: center;
+    margin-top: 50%;
+	color: #8a8a8a;
+	.iconfont{
+		font-size: 50px;
+	}
+	.label-text{
+		margin-top: 20px;
+	}
+}
+
+#mavonEditor{
+	.v-note-op{
+		box-shadow: none;
+		border-width: 1px 0px 1px 0px;
+		border-color: #ccc;
+		border-style: solid;
+    	background: #f1efef;
+	}
+	.v-note-panel{
+		box-shadow: none;
+	}
+}
