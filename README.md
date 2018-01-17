@@ -10,5 +10,16 @@ $  vue init louisscrew/electron-vue-sass-webpack-gulp my-project
 # 安装依赖，走你
 $ cd my-project
 $ npm install
-$ npm run dev  or  npm run build
+
+#单独运行vue页面使用下面命令
+$ npm run dev:vue
+
+#使用electron整体运行开发模式则使用如下命令
+$ npm run dev:app
+
+#打包编译vue使用如下命令
+$ npm run build:vue
+
+#打包成windows程序使用如下命令
+$ npm run build:win
 ```
